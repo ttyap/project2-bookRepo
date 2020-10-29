@@ -1,0 +1,76 @@
+<%- include('./../partials/header'); %>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <p>
+                <img src="<%= book.image %>" />
+            </p>
+        </div>
+        <div class="col-6">
+            <p><%= "Title: " + book.title %></p> 
+            <p><%= "Author: " + book.author %></p> 
+            <p><%= "Year of publish: " + book.publish_year %></p> 
+            <p><%= "Sypnosis: " + book.synopsis %></p> <br>
+            <!--can only rate after login-->
+
+            <% if (!user) { %>
+                <a href="/user/login">
+                <button type="submit" class="btn btn-success" id="addlistbtn">Login to rate book</button>
+                </a>
+                <% } %>
+            <% if (user) { %>
+                <form method="POST" action="/bookrepo/<%= book.slug %>/ratings">
+                <div class="rate">
+                    <%  for (let i = 5; i > 0; i--) { %>
+                        <input type="radio" id="star<%= i %>" name="rating" value="<%= i %>"/>
+                        <label for="star<%= i %>" title="text"><%= i %></label>
+                    <% } %> 
+                    <h7>Rate & comment : </h7>  
+                </div>
+                <textarea class="form-control" id="comments" rows="3"placeholder="Max. 300 characters" name="comments"></textarea>
+                <button type="submit" class="btn btn-primary">Submit</button>  
+            </form>
+
+            <form method="POST" action="/user/booklist">
+                <input type="hidden" id="bookId" name="bookId" value="<%= book.id %>">
+                <button type="submit" class="btn btn-success" id="addlistbtn">Add book to my bookRepo</button>
+
+            </form>
+            <% } %> 
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-10">
+
+            <% if (!ratings[0]) { %>
+                
+                <p>This book has no ratings yet.</p>
+                <% } %>
+
+
+    <% if (ratings[0]) { %>
+        <section id="book-ratings">
+            <ul>
+                <% ratings.forEach(book => { %>
+                    <li>
+                        <p>
+                            
+                                <%  for (let i = book.rating; i > 0; i--) { %>
+                                <span class="filled" id="star<%= i %>"></span>
+                                <% } %> by: <b> <%= book.user     %> </b> <br>
+                      They say: <b><%= book.comment %></b> <br>
+                        
+                    </li>
+                <% }) %> 
+            </ul>
+        </section>
+    <% } %>
+    </div>
+    </div>
+    </div>
+    <%- include('./../partials/footer'); %>
+
+    

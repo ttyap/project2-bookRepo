@@ -1,0 +1,40 @@
+<%- include('../partials/header'); %>
+<h1><%= pageTitle %></h1>
+    <div class="container">
+
+     
+
+        <form method="POST" action="/bookrepo">
+            <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" name="author" id="author">
+            </div>
+
+            <div class="form-group">
+                <label for="publish_year">Year of publish</label>
+                <input type="text" class="form-control" name="publish_year" id="publish_year">
+            </div>
+
+            <div class="form-group">
+                <label for="synopsis">Synopsis</label>
+                <input type="text" class="form-control" name="synopsis" id="synopsis" placeholder="Tell us about the book">
+            </div>
+
+
+            <!-- Image URL -->
+            <div class="form-group">
+                <label for="img-url">Image URL</label>
+                <input type="url" class="form-control" name="img_url" id="img-url">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+<%- include('../partials/footer'); %>

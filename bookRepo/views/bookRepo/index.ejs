@@ -1,0 +1,38 @@
+<%- include('../partials/header'); %>
+
+
+<h1><%= pageTitle %></h1>
+
+<ul>
+
+    <div class="row">
+
+    <% books.forEach ((item, index) => { %>
+        <div class="col-md-3 col-sm-8">  
+           
+
+            <li>
+                <a href="/bookrepo/<%= item.slug %>"><img src="<%= item.image %>" /></a>
+                <p class="index"> Title: <a href="/bookrepo/<%= item.slug %>"><%= item.title %> </p></a>
+                <p class="index"> <%= 'Author: ' + item.author %> </p>  
+
+
+            </li>
+        </div>
+     
+        
+        <% }) %>
+       
+    </div>
+</ul>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+<%- include('../partials/footer'); %>
+    

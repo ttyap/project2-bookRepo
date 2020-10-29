@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/166/166088.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+
+    
+
+    <title> <%= pageHeader %></title>
+  </head>
+ 
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     
+        <a class="navbar-brand" href="/bookrepo"> <img src="https://image.flaticon.com/icons/png/512/166/166088.png" alt="flowers"> bookRepo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="/bookrepo">Home</a>
+            </li>
+            
+      <% if (user === null) { %>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/user/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/register">Register</a>
+              </li>
+
+              <% } else { %>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/user/booklist">My bookRepo </a>
+            </li>
+            <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="/user/new">Add new book </a>
+              </li>            
+
+
+
+  
+          </ul>
+          <li class="nav-item">
+            <form method="POST" action="/user/logout">
+              <button type="submit" id="logoutbtn" class="btn nav-link">Logout</a>
+            </form>
+          </li>
+
+          
+
+
+          <% } %>
+
+        </div>
+     
+        
+
+    </nav>
+    <% if(flash.error) { %>
+      
+    <div class="alert alert-danger" id="error" role="alert" style="font-size: larger; text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      <%=flash.error%>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    
+</div>
+      <% } %>
+
+      <% if(flash.welcome) { %>
+        
+        <div class="alert alert-success" role="alert" style="font-size: larger; text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"  >
+        <%=flash.welcome%><%=user.first_name%>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+  
+      
+    </div>
+        <% } %>

@@ -1,0 +1,47 @@
+<%- include('./../partials/header'); %>
+
+
+<h1> <%= pageTitle %></h1>
+
+
+
+<% if (myBooks != null) { %>  
+<ul>
+
+    <div class="row">
+
+
+    <% myBooks.forEach ((item, index)=> { %>
+        <div class="col-md-3 col-sm-8">  
+           
+
+            <li>
+                <a href="/bookrepo/<%= item.slug %>"><img src="<%= item.image %>" /></a>
+                <p class="index"> Title: <a href="/bookrepo/<%= item.slug %>"><%= item.title %> </p></a>
+                <p class="index"> <%= 'Author: ' + item.author %> </p>  
+                <div class="action-buttons">
+
+                <a href="/user/<%= item.slug %>/edit">
+                        <button type="button" class="btn btn-primary">Edit book</button>
+                        </a>
+                <form method="POST" action="/bookrepo/<%= item.slug %>?_method=DELETE">
+                        <button type="submit" class="btn btn-danger">Remove from my bookRepo</button>
+                </form>
+                
+
+            </li>
+        </div>
+       
+        
+        <% }) %>
+      
+    </div>
+</ul>
+<% } %>
+
+   
+
+
+
+
+<%- include('./../partials/footer'); %>

@@ -1,0 +1,201 @@
+.navbar {
+    width: auto;
+    height: 75px;
+}
+
+.navbar img {
+   height: 30px;
+   width: 30px;
+}
+
+body {
+    position: relative;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 1000;
+    
+   
+    
+}
+
+
+
+h1 {
+    padding: 20px
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    text-align: center;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    
+}
+
+li img {
+    height: 300px;
+    width: 200px;
+    background: url(img/tiger.png) no-repeat;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+    transition-duration: 0.5s;
+    margin-bottom: 20px;
+    
+}
+
+li img:hover {
+
+    transform: scale(1.1)
+
+}
+ p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 30px;
+   font-size: large;
+    text-align: left;
+    
+
+}
+
+p img {
+    
+    height: 450px;
+    width: 300px;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+    
+
+}
+.index {
+   
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align:center;
+    font-size: medium;
+    
+}
+a {
+    color: black;
+}
+
+h7 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 0;
+    
+    
+    
+}
+
+#comments {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.btn {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10px;
+
+}
+
+
+#book-ratings {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color:beige;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+
+    
+}
+
+
+
+#book-ratings li p {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.form-group {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#addbtn {
+    margin-top: 0;
+    margin-left: 30px;
+}
+#logoutbtn {
+
+    font-size: 18px;
+    color:rgba(206, 204, 207);
+    margin-bottom: 40px;
+}
+
+h8 {
+    margin-top: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #ffc700;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #ffc700;
+}
+
+.filled:before {
+
+    color: #ffc700;    
+    content: '★ ';
+
+}
+
