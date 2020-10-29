@@ -57,7 +57,7 @@ app.use(setUserVarMiddleware)
 // =======================================
 //              ROUTES
 // =======================================
-app.get('/bookrepo', bookListController.listBooks) // index
+app.get('/', bookListController.listBooks) // index
 app.get('/bookrepo/:slug', bookListController.showBooks) // show
 app.post('/bookrepo/:slug/ratings', bookRatingController.createRating) // create rating
 app.get('/user/new', userController.addNewBook)// new
